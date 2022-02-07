@@ -1,0 +1,9 @@
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (1, 1, '2022-02-05');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (1, 5, '2022-02-05');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (2, 4, '2022-02-05');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (2, 5, '2022-02-06');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (2, 6, '2022-02-06');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (3, 1, '2022-02-07');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (3, 2, '2022-02-07');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (4, 2, '2022-02-07');
+INSERT INTO subscriptions (student_id, course_id, subscription_date) VALUES (4, 3, '2022-02-07');

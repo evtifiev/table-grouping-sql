@@ -1,0 +1,22 @@
+version: "3"
+services:
+  postgres_db:
+    image: "postgres:14"
+    container_name: "course_db"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=p@ssw0rd
+      - APP_DB_USER=course
+      - APP_DB_PASS=course
+      - APP_DB_NAME=course_db
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+      - ./data/db:/var/lib/postgresql/data
