@@ -32,9 +32,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
       price_per_hour INTEGER
     );
     CREATE TABLE IF NOT EXISTS Subscriptions (
-      student_id INTEGER REFERENCES Students(id),
-      course_id  INTEGER REFERENCES Teachers(id),
-      subscription_date TIMESTAMP
+      student_id INTEGER REFERENCES Students(id) ON UPDATE CASCADE ON DELETE CASCADE,
+      course_id  INTEGER REFERENCES Courses(id) ON UPDATE CASCADE,
+      subscription_date TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
+      CONSTRAINT subscription_pkey PRIMARY KEY (student_id, course_id)
     );
   COMMIT;
 EOSQL
